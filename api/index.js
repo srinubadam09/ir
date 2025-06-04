@@ -1,3 +1,4 @@
+
 require('dotenv').config();
 const express = require('express');
 const mqtt = require('mqtt');
@@ -69,6 +70,4 @@ cron.schedule('0 19 * * 1-6', () => {
   mqttClient.publish(topic, 'off');
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+module.exports = app;
